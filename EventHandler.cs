@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Exiled.API.Features;
-using Exiled.Events.EventArgs;
-using MEC;
-using Player = Exiled.API.Features.Player;
+
 
 namespace RoundStartedMsg
 {
-    public class EventHandler
+    public class EventHandlers
     {
-
-        public EventHandler()
-        {
-        }
 
         public void OnRoundStarted()
         {
-            Map.Broadcast(RoundStartedMsg.Singleton.Config.HowLong, RoundStartedMsg.Singleton.Config.OnRoundStarted);
+            Map.Broadcast(Plugin.Singleton.Config.HowLong, Plugin.Singleton.Config.OnRoundStarted);
         }
     }
 }
