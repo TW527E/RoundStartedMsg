@@ -19,7 +19,7 @@ namespace RoundStartedMsg
 
         public void OnRoundStarted()
         {
-            Map.Broadcast(duration: RoundStartedMsg.RoundStartedMsgRef.Config.HowLong, message: RoundStartedMsg.RoundStartedMsgRef.Config.OnRoundStarted);
+            Map.Broadcast(RoundStartedMsg.RoundStartedMsgRef.Config.HowLong, RoundStartedMsg.RoundStartedMsgRef.Config.OnRoundStarted);
         }
     }
 }
