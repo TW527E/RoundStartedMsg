@@ -10,8 +10,6 @@ namespace RoundStartedMsg
 {
     public class EventHandler
     {
-        public readonly Plugin<Configs> plugin;
-        public EventHandler(Plugin<Configs> plugin) => this.plugin = plugin;
 
         public EventHandler()
         {
