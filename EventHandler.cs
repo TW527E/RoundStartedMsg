@@ -17,7 +17,7 @@ namespace RoundStartedMsg
 
         public void OnRoundStarted()
         {
-            Map.Broadcast(RoundStartedMsg.RoundStartedMsgRef.Config.HowLong, RoundStartedMsg.RoundStartedMsgRef.Config.OnRoundStarted);
+            Map.Broadcast(RoundStartedMsg.Singleton.Config.HowLong, RoundStartedMsg.Singleton.Config.OnRoundStarted);
         }
     }
 }
