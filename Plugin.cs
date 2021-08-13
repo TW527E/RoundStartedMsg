@@ -1,35 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Exiled.API.Features;
-using Exiled.Events.EventArgs;
-using MEC;
-using UnityEngine;
 using Server = Exiled.Events.Handlers.Server;
 
 namespace RoundStartedMsg
 {
-	public class RoundStartedMsg : Plugin<Configs>
-	{
-		public static RoundStartedMsg RoundStartedMsgRef { get; set; }
+    public class Plugin : Plugin<Config>
+    {
+        public static Plugin Singleton;
+        public override string Prefix => "RoundStartedMsg";
 
-		public EventHandler eventHandlers;
+        private EventHandlers EventHandlers;
 
-		public RoundStartedMsg()
-		{
-			RoundStartedMsgRef = this;
-		}
+        public override void OnEnabled()
+        {
+            Singleton = this;
+            EventHandlers = new EventHandlers();
 
-		public override void OnEnabled()
-		{
-			eventHandlers = new EventHandler();
-			Server.RoundStarted += eventHandlers.OnRoundStarted;
-		}
+            Server.RoundStarted += EventHandlers.OnRoundStarted;
 
-		public override void OnDisabled()
-		{
-			Server.RoundStarted += eventHandlers.OnRoundStarted;
-			eventHandlers = null;
-		}
-	}
+            base.OnEnabled();
+        }
+
+        public override void OnDisabled()
+        {
+            Server.RoundStarted -= EventHandlers.OnRoundStarted;
+            EventHandlers = null;
+            Singleton = null;
+            base.OnDisabled();
+        }
+    }
 }
+
