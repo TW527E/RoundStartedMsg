@@ -2,7 +2,7 @@
 ![EXILED CI](https://github.com/galaxy119/EXILED/workflows/EXILED%20CI/badge.svg?branch=2.0.0)
 ![GitHub Release](https://img.shields.io/github/release/TW527E/RoundStartedMsg/all.svg?style=flat)
 <a href="https://discord.gg/vCTtKazpZz">
-  <img src="https://img.shields.io/discord/892799334289145896?logo=discord" alt="Chat on Discord">
+  <img src="https://img.shields.io/discord/892799334289145896?logo=discord" alt="Chat on Discord"> 
 </a><br>
 Made by 誠誠#7773
 
